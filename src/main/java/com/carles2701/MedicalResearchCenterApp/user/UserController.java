@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public UserDTO updateUser(@RequestBody User user, @PathVariable("id") Long id) throws NotFoundException {
+    public User updateUser(@RequestBody User user, @PathVariable("id") Long id) throws NotFoundException {
         return userService.updateUser(id, user);
     }
 

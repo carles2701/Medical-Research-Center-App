@@ -34,6 +34,12 @@ public class User {
     private String street;
 
     @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
+    private String country;
+
+    @Column(nullable = false)
     private String age;
 
     @Column(nullable = false)
@@ -47,6 +53,8 @@ public class User {
                 String name,
                 String surname,
                 String street,
+                String city,
+                String country,
                 String age,
                 String houseNumber,
                 String phoneNumber) {
@@ -55,6 +63,8 @@ public class User {
         this.name = name;
         this.surname = surname;
         this.street = street;
+        this.city = city;
+        this.country = country;
         this.age = age;
         this.houseNumber = houseNumber;
         this.phoneNumber = phoneNumber;
