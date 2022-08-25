@@ -18,17 +18,20 @@ public class UserAgreementService {
     }
 
     public List<UserAgreement> getAllUserAgreements() {
+        return userAgreementRepository.findAll();
     }
 
-    public User createUserAgreement(UserAgreement userAgreement) {
+    public UserAgreement createUserAgreement(UserAgreement userAgreement) {
+        return userAgreementRepository.save(userAgreement);
     }
 
-    public User getUserAgreementById(Long id)  throws NotFoundException {
-    }
-
-    public User updateUserAgreement(Long id, UserAgreement userAgreement) throws NotFoundException {
+    public UserAgreement getUserAgreementById(Long id) throws NotFoundException {
+        return userAgreementRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Agreement not found"));
     }
 
     public void deleteUserAgreementById(Long id) {
+        userAgreementRepository.deleteById(id);
     }
 }

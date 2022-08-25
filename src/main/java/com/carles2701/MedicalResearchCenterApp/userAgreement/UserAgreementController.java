@@ -25,18 +25,13 @@ public class UserAgreementController {
     }
 
     @PostMapping("/save")
-    public User saveUserAgreement(@RequestBody UserAgreement userAgreement) {
+    public UserAgreement saveUserAgreement(@RequestBody UserAgreement userAgreement) {
         return userAgreementService.createUserAgreement(userAgreement);
     }
 
     @GetMapping("/{id}")
-    public User getUserAgreementById(@PathVariable("id") Long id) throws NotFoundException {
+    public UserAgreement getUserAgreementById(@PathVariable("id") Long id) throws NotFoundException {
         return userAgreementService.getUserAgreementById(id);
-    }
-
-    @PutMapping("/{id}")
-    public User updateUserAgreement(@RequestBody UserAgreement userAgreement, @PathVariable("id") Long id) throws NotFoundException {
-        return userAgreementService.updateUserAgreement(id, userAgreement);
     }
 
     @DeleteMapping("/{id}")
